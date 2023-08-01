@@ -72,7 +72,7 @@ IaC が無理なら AWS CLI の describe-instances で既存設定値を取得�
 **2023年8月1日追記**
 AWS Backup から EC2 をリストアするとほとんど元の状態に戻せます。  
 タグも2023年5月22日以降に作成されたバックアップであれば事前設定をしておくことで復元できます。AMI によるインスタンス入れ替えの手段になると思います。    
-[[アップデート]AWS Backupはタグと一緒にリソースをリストアすることを対応しました](https://dev.classmethod.jp/articles/restoring-resources-with-tags-using-aws-backup/)  
+[AWS Backup でEC2の設定がどこまで戻るか試してみた](https://zenn.dev/ryoyoshii/articles/c573e96012957b) 
 
 ALB 背後にあるインスタンスなら、ターゲットグループを2つ作り重みを付けながら少しずつトラフィックを移行していく方法を検討します。  
 AutoScaling な EC2 なら、起動テンプレートを変更するだけで済むかもしれません。  
