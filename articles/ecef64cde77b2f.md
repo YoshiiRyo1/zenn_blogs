@@ -69,6 +69,11 @@ AMI によるインスタンスの入れ替えは事故を起こす可能性が�
 IaC で管理済みなら少し安心できます。動的に変わる箇所以外はコントール可能だからです。IaC をこれから導入するなら既存リソースをインポートしてコントール下に置きます。  
 IaC が無理なら AWS CLI の describe-instances で既存設定値を取得して run-instances のオプションに渡すことを半自動化は可能です。新旧インスタンスで describe-instances の結果を diff かけることも有効です。  
 
+**2023年8月1日追記**
+AWS Backup から EC2 をリストアするとほとんど元の状態に戻せます。  
+タグも2023年5月22日以降に作成されたバックアップであれば事前設定をしておくことで復元できます。AMI によるインスタンス入れ替えの手段になると思います。    
+[[アップデート]AWS Backupはタグと一緒にリソースをリストアすることを対応しました](https://dev.classmethod.jp/articles/restoring-resources-with-tags-using-aws-backup/)  
+
 ALB 背後にあるインスタンスなら、ターゲットグループを2つ作り重みを付けながら少しずつトラフィックを移行していく方法を検討します。  
 AutoScaling な EC2 なら、起動テンプレートを変更するだけで済むかもしれません。  
 
@@ -135,5 +140,6 @@ EC2 バリバリ使っているアカウントだと影響は大きいですし�
 
 [describe-instances](https://awscli.amazonaws.com/v2/documentation/api/latest/reference/ec2/describe-instances.html)  
 [[小ネタ]AWS BackupでEC2をリストアした後に変更される項目や再設定が必要な項目](https://dev.classmethod.jp/articles/aws_backup_genmanage/)  
+[[アップデート]AWS Backupはタグと一緒にリソースをリストアすることを対応しました](https://dev.classmethod.jp/articles/restoring-resources-with-tags-using-aws-backup/)  
 [AWS services that support IPv6](https://docs.aws.amazon.com/vpc/latest/userguide/aws-ipv6-support.html)  
 
