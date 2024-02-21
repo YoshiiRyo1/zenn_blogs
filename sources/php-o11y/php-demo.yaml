@@ -1,0 +1,97 @@
+# php-pfm
+## Deployment
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: php-demo
+  namespace: php-o11y
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: php-demo
+  template:
+    metadata:
+      labels:
+        app: php-demo
+    spec:
+      containers:
+      - name: php-demo
+        image: php-local:latest
+        imagePullPolicy: IfNotPresent
+        ports:
+        - containerPort: 9000
+        env:
+        - name: OTEL_PHP_AUTOLOAD_ENABLED
+          value: "true"
+        - name: OTEL_SERVICE_NAME
+          value: "php-demo"
+        - name: OTEL_TRACES_EXPORTER
+          value: "otlp"
+        - name: OTEL_METRICS_EXPORTER
+          value: "none"
+        - name: OTEL_LOGS_EXPORTER
+          value: "console"
+        - name: OTEL_EXPORTER_OTLP_PROTOCOL
+          value: "grpc"
+        - name: OTEL_EXPORTER_OTLP_ENDPOINT
+          value: "http://opentelemetry-collector:4317"
+        - name: OTEL_PROPAGATORS
+          value: "baggage,tracecontext"
+        volumeMounts:
+        - name: php-fpm-docker-configmap
+          mountPath: /usr/local/etc/php-fpm.d/docker.conf
+          subPath: docker.conf
+      - name: nginx-demo
+        image: nginx-local:latest
+        imagePullPolicy: IfNotPresent
+        ports:
+        - containerPort: 80
+      volumes:
+      - name: php-fpm-docker-configmap
+        configMap:
+          name: php-fpm-docker-configmap
+
+---
+## /usr/local/etc/php-fpm.d/docker.conf
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: php-fpm-docker-configmap
+data:
+  docker.conf : |-
+    [global]
+    error_log = /proc/self/fd/2
+
+    ; https://github.com/docker-library/php/pull/725#issuecomment-443540114
+    log_limit = 8192
+
+    [www]
+    ; php-fpm closes STDOUT on startup, so sending logs to /proc/self/fd/1 does not work.
+    ; https://bugs.php.net/bug.php?id=73886
+    access.log = /dev/null
+
+    clear_env = no
+
+    ; Ensure worker stdout and stderr are sent to the main error log.
+    catch_workers_output = yes
+    decorate_workers_output = no
+
+---
+## Service
+apiVersion: v1
+kind: Service
+metadata:
+  name: php-demo
+  namespace: php-o11y
+spec:
+  type: NodePort
+  selector:
+    app: php-demo
+  ports:
+  - name: nginx-demo
+    protocol: TCP
+    port: 80
+    targetPort: 80
+
+

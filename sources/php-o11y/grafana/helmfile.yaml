@@ -1,0 +1,11 @@
+repositories:
+  - name: grafana
+    url: https://grafana.github.io/helm-charts
+
+releases:
+  - name: grafana
+    namespace: php-o11y
+    chart: grafana/grafana
+    version: 7.2.3
+    values:
+      - values.yaml

@@ -1,0 +1,11 @@
+repositories:
+  - name: grafana
+    url: https://grafana.github.io/helm-charts
+
+releases:
+  - name: tempo
+    namespace: php-o11y
+    chart: grafana/tempo
+    version: 1.7.1
+    values:
+      - values.yaml

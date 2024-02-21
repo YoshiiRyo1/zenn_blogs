@@ -1,0 +1,16 @@
+version: '3.9'
+
+services:
+  ## nginx
+  nginx:
+    image: nginx-local
+    build: ./nginx
+    ports:
+      - "80:80"
+
+  ## PHP
+  php-demo:
+    image: php-local
+    build: ./php-fpm
+    ports:
+      - "9000:9000"
