@@ -1,0 +1,20 @@
+title: "OpenTelemetry入門"
+summary: |-
+  分散かつ複雑化するアプリケーションの内部動作を把握するためには、伝統的なメトリクスによるモニタリングやログの egrep だけでは不十分です。  
+  オブサーバビリティの概念を取り入れ、予見しない状態に変化したときにもアプリケーションの内部動作を把握し、早急な回復を行う準備を整えることが求められます。  
+  オブサーバビリティを実現する方法は多くありますが、その中でも OpenTelemetry はオープンソースでベンダー非依存のプロジェクトとして注目されています。  
+  この本は OpenTelemetry をこれから始めるエンジニアに向けて、基礎を学ぶ入門書として活用していただくたい思いで執筆しました。  
+
+  この本で書く内容は OpenTelemetry の基本となっています。詳しく知りたい方は公式ドキュメントを参照してください。  
+  https://opentelemetry.io/docs/
+
+topics: ["OpenTelemetry", "Observability", "APM", "無料で読める本", "薄い本"] # トピック（5つまで）
+published: false # falseだと下書き
+price: 0 # 有料の場合200〜5000
+toc_depth: 2 # 目次の深さ（1〜3）
+chapters:
+  - whatis
+  - traces
+  - metrics
+  - logs
+  - baggage
