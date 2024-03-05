@@ -81,6 +81,34 @@ Span Events には以下の情報が含まれます。
 - イベント発生時のタイムスタンプ
 - イベントの内容を示す属性
 
+### 例外
+
+トレースを手動計装する場合でも、例外をキャッチして Span Event として記録すべきとされています。  
+公式にあるコード例のように Try-Catch-Finally で実装しましょう。  
+
+```
+Span span = myTracer.startSpan(/*...*/);
+try {
+  // Code that does the actual work which the Span represents
+} catch (Throwable e) {
+  span.recordException(e, Attributes.of("exception.escaped", true));
+  throw e;
+} finally {
+  span.end();
+}
+```
+*https://opentelemetry.io/docs/specs/otel/trace/exceptions/ より*
+
+
+また、exception イベント用の属性も一緒に付与すると良いと思います。  
+
+- exception.escaped
+- exception.message
+- exception.stacktrace
+- exception.type
+
+属性の詳細は [Semantic Conventions for Exceptions on Spans](https://opentelemetry.io/docs/specs/semconv/exceptions/exceptions-spans/#attributes) を参照ください。  
+
 ### Span Links
 
 他のスパンへのリンクです。スパン間の前後関係を示すのに有効です。  
@@ -155,3 +183,30 @@ Span Status は `Unset`、`OK`、`Error` のいずれかです。
   ]
 }
 ```
+
+## Tracer Provider
+
+Tracer Provider は Tracer を生成したり、設定を保持します。  
+
+設定には、サンプリング、Exporter の IP アドレス/ホスト名、リミットなどが含まれます。  
+
+## Tracer
+
+Tracer はスパンを生成します。
+
+## Trace Exporters
+
+Trace Exporters はトレースをコンシューマに送信します。  
+コンシューマはOTel Collector、オブサーバビリティバックエンドなどです。  
+
+## Context の伝搬
+
+分散トレースを実現するために Context の伝搬は欠かせない要素です。Context が伝搬していくことによって分散システムでもトレースを追跡することができます。  
+伝搬については別の章で説明します。    
+
+## 参考
+
+https://opentelemetry.io/docs/concepts/signals/traces/
+
+https://opentelemetry.io/docs/specs/otel/trace/
+

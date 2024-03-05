@@ -18,3 +18,5 @@ chapters:
   - metrics
   - logs
   - baggage
+  - resources
+  - collector
