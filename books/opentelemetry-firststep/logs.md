@@ -11,7 +11,7 @@ OTel では、分散トレースまたはメトリックの一部ではないデ
 OTel のログはトレースやメトリクスとは違うアプローチを採用しています。ログはプログラム言語や運用ソリューションにすでに広く普及しています。
 それらの既存ログ、トレース、メトリクス、および、他の OTel コンポーネントのブリッジとして機能するアプローチとなっています。  
 
-<img src="https://opentelemetry.io/docs/specs/otel/logs/img/appender.png">  
+![img](https://opentelemetry.io/docs/specs/otel/logs/img/appender.png)  
 *https://opentelemetry.io/docs/specs/otel/logs/supplementary-guidelines/ より*
 
 # OTel のログソリューション
