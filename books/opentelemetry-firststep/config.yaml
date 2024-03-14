@@ -17,7 +17,6 @@ chapters:
   - traces
   - metrics
   - logs
-  - baggage
   - resources
   - collector
   - protocol
