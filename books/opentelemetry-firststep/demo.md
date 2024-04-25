@@ -8,18 +8,18 @@ title: "デモ"
 公式のデモを使用します。  
 [OpenTelemetry Demo Documentation](https://opentelemetry.io/docs/demo/)  
 
-本書では、ローカル PC に Kubernetes クラスタを立ち上げてデモを実行します。  
+本書では、ローカル PC に Kubernetes クラスターを立ち上げてデモを実行します。  
 
 # kubectl インストール
 
-Kubernetes クラスタを操作するために kubectl をインストールします。  
+Kubernetes クラスターを操作するために kubectl をインストールします。  
 
 [Install Tools](https://kubernetes.io/docs/tasks/tools/) に OS ごとのインストール方法が記載されています。それを参照してインストールしましょう。  
 
 # minikube インストール
 
 今回は minikube を使用します。  
-minikube はローカル環境で Kubernetes クラスタを起動できるツールです。  
+minikube はローカル環境で Kubernetes クラスターを起動できるツールです。  
 
 インストール手順は [minikube start](https://minikube.sigs.k8s.io/docs/start/) を参照ください。  
 
@@ -160,7 +160,7 @@ Tags と Process という属性名ですが、Grafana では Span と Resource 
 
 # トラブルシュートシナリオ
 
-さて、Kubernetes クラスタにデモが立ち上がりました。  
+さて、Kubernetes クラスターにデモが立ち上がりました。
 デモを表示させただけではつまらないので、トラブルシュートをしてみましょう。  
 
 デモが起動している場合は一旦落とします。  
@@ -187,7 +187,7 @@ $ tar -zxf opentelemetry-demo-0.30.2.tgz
 `opentelemetry-demo/flagd/demo.flagd.json` を編集します。  
 このファイルには Feature Flags 一式が記載されています。`productCatalogFailure` を **on** に変更します。  
 
-```json
+```json:opentelemetry-demo/flagd/demo.flagd.json
     "productCatalogFailure": {
       "description": "Fail product catalog service on a specific product",
       "state": "ENABLED",
