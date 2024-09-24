@@ -519,7 +519,7 @@ your_agent_arn と your_alias_id は適宜変更してください。
 :火: Connector successfully added.
 To chat with what you've connected, ask something like the following:
 
-@aws ask push - what things should I ask you?
+@aws ask connector_name - what things should I ask you?
 ```
 
 それではテストしてみましょう。身バレを避けるために一部ぼかしています。  
