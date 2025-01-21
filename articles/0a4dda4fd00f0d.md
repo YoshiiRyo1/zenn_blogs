@@ -165,6 +165,8 @@ spec:
 `k create` で Ingress を作成します。  
 
 ```bash
+$ minikube addons enable ingress
+
 $ k create -f nginx-ingress.yaml 
 ingress.networking.k8s.io/example-ingress created
 
