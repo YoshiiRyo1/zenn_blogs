@@ -57,4 +57,11 @@ https://opentelemetry.io/community/mission/
 本ページの最後になりましたが、OTel の MVV を紹介します。  
 OTel の MVV を読むと彼らの方向性や目標が理解でき、Otel に関する興味が増すはずです。  
 
+# 書籍の紹介
+
+オライリー・ジャパン社より『入門OpenTelemetry―現代的なオブザーバビリティシステムの構築と運用』が発売されています。  
+OTel の全体像を把握するのに最適な一冊です。（ここを読むよりこの書籍を読むことをお勧めします。）
+
+[『入門OpenTelemetry』という本が出版されました #learning_otel](https://ymotongpoo.hatenablog.com/entry/learning-otel)  
+
 
