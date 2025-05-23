@@ -1,7 +1,7 @@
 {
   "name": "zenn_blogs",
   "version": "1.0.0",
-  "description": "",
+  "description": "This is a repository for my personal blog. I write about observability, AWS, and other things I'm interested in.",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
@@ -10,6 +10,14 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
-    "zenn-cli": "^0.1.155"
-  }
+    "zenn-cli": "^0.1.159"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/YoshiiRyo1/zenn_blogs.git"
+  },
+  "bugs": {
+    "url": "https://github.com/YoshiiRyo1/zenn_blogs/issues"
+  },
+  "homepage": "https://github.com/YoshiiRyo1/zenn_blogs#readme"
 }
