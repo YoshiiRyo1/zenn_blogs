@@ -1,0 +1,45 @@
+{
+    "env": {
+        "ANTHROPIC_DEFAULT_OPUS_MODEL": "claude-opus-4-6",
+        "ANTHROPIC_DEFAULT_SONNET_MODEL": "claude-sonnet-4-6",
+        "ANTHROPIC_DEFAULT_HAIKU_MODEL": "claude-haiku-4-5-20251001",
+        "CLAUDE_CODE_DISABLE_EXPERIMENTAL_BETAS": "1",
+        "CLAUDE_CODE_EXPERIMENTAL_AGENT_TEAMS": "1",
+        "DISABLE_ANTHROPIC_BETA_HEADERS": "1",
+        "ENABLE_TOOL_SEARCH": "true"
+    },
+    "permissions": {
+        "allow": [
+            "Bash",
+            "Blob",
+            "Edit",
+            "Grep",
+            "Skill",
+            "WebSearch",
+            "WebFetch",
+            "Write"
+        ],
+        "deny": [
+            "Bash(rm -rf /:*)",
+            "Bash(rm -rf ~/:*)",
+            "Bash(sudo:*)",
+            "Bash(shutdown:*)",
+            "Bash(reboot:*)"
+        ],
+        "ask": [
+            "Bash(rm:*)",
+            "Bash(curl:*)",
+            "Bash(wget:*)"
+        ],
+        "defaultMode": "dontAsk"
+    },
+    "enableAllProjectMcpServers": true,
+    "enabledPlugins": {
+        "skill-creator@claude-plugins-official": true,
+        "commit-commands@claude-plugins-official": true,
+        "claude-md-management@claude-plugins-official": true,
+        "claude-code-setup@claude-plugins-official": true,
+        "hookify@claude-plugins-official": true
+    },
+    "language": "japanese"
+}
