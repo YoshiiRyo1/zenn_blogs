@@ -10,6 +10,32 @@
 $ npx zenn new:article
 ```
 
+スキルを使う場合
+
+```bash
+/new-article "OpenTelemetryでトレースを可視化する" observability AWS opentelemetry
+```
+
+- タイトル（必須）、トピック・タイプ・絵文字は省略可能 
+- published: false で作成されるので、確認後に手動で true に変更して公開
+- トピック未指定時はタイトルから自動推測して提案します
+
+## 記事レビュー
+
+```bash
+/article-review articles/05d2ffe846f518.md
+```
+
+- 技術的正確性・構成・読みやすさ・コード品質・SEO・実用性の6観点でレビュー
+- 改善提案には優先度（必須／推奨／任意）を付けて出力
+- .github/copilot-instructions.md のチェックリストをベースに作成しているので、既存のレビュー基準と一貫しています
+
+## SEO・メタデータ自動チェッカー
+
+```bash
+article-seo-checkerで全記事をチェックして
+```
+
 ## プレビューする
 
 本文の執筆は、ブラウザでプレビューしながら確認できます。ブラウザでプレビューするためには次のコマンドを実行します。
@@ -57,4 +83,3 @@ $ npx zenn preview # プレビュー開始
 ![](../images/example-image1.png)
 ![](//images/example-image1.png)
 ```
-
