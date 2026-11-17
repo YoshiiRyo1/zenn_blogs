@@ -7,7 +7,7 @@ published: false
 ---
 
 みなさん、おはようございます、こんにちは、こんばんは Ai Workforce 事業部 プロダクト部 Platform Enablement グループ 吉井 亮です。
-Technical PM というロールで日々プロダクトの価値向上に邁進しています。
+テクニカルプロジェクトマネージャーというロールで日々プロダクトの価値向上に邁進しています。
 
 当記事では Ai Workforce 事業部のリモートコーディングエージェント環境である `Yoro` を使ったループエンジニアリングを紹介します。
 
@@ -184,3 +184,20 @@ context:                   # プランナーと実装役に渡す資料
 
 [Loop Engineering](https://addyosmani.com/blog/loop-engineering/)  
 [Loop engineering: Getting started with loops](https://claude.com/ja/resources/articles/getting-started-with-loops)  
+
+## おわりに
+
+LayerX では、ループエンジニアリングを駆使して一緒に課題を解決する仲間を募集しています！
+少しでも興味を持っていただけたら、まずはカジュアルにお話ししませんか？
+
+https://jobs.layerx.co.jp/opendoor/?service=AI%E3%83%BBLLM
+
+
+また、テクニカルプロジェクトマネージャーに興味がある方も募集しています。
+技術的な責任を持つ楽しいロールです。以下の記事も参照ください。
+
+https://note.layerx.co.jp/n/n22415550ce91
+
+https://open.talentio.com/r/1/c/layerx/pages/107242
+
+
