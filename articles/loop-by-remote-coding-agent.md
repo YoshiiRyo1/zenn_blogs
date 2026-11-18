@@ -3,7 +3,7 @@ title: "リモートコーディングエージェント yoro で始めるルー
 emoji: "📘"
 type: "tech" # tech: 技術記事 / idea: アイデア
 topics: ["リモートコーディングエージェント","ループエンジニアリング","リモートエージェント"]
-published: false
+published: true
 ---
 
 みなさん、おはようございます、こんにちは、こんばんは Ai Workforce 事業部 プロダクト部 Platform Enablement グループ 吉井 亮です。
